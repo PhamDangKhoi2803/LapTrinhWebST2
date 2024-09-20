@@ -19,12 +19,24 @@ public class UserModel implements Serializable{
 	private String phone;
 	private Date createDate;
 	
-	//tạo Contructor
 	public UserModel() {
 		super();
 	}
 
-	//Tạo getter and setters
+	public UserModel(int id, String username, String email, String fullname, String password, String images, int roleid,
+			String phone, Date createDate) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+		this.fullname = fullname;
+		this.password = password;
+		this.images = images;
+		this.roleid = roleid;
+		this.phone = phone;
+		this.createDate = createDate;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -89,7 +101,6 @@ public class UserModel implements Serializable{
 		this.phone = phone;
 	}
 
-
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -98,15 +109,13 @@ public class UserModel implements Serializable{
 		this.createDate = createDate;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	@Override
 	public String toString() {
 		return "UserModel [id=" + id + ", username=" + username + ", email=" + email + ", fullname=" + fullname
 				+ ", password=" + password + ", images=" + images + ", roleid=" + roleid + ", phone=" + phone
 				+ ", createDate=" + createDate + "]";
 	}
+	
+	
 
 }

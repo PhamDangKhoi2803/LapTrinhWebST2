@@ -23,9 +23,7 @@ public class RoleModel  implements Serializable{
 	public void setRolename(String rolename) {
 		this.rolename = rolename;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 	@Override
 	public String toString() {
 		return "RoleModel [roleid=" + roleid + ", rolename=" + rolename + "]";

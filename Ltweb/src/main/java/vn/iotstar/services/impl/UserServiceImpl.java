@@ -6,7 +6,7 @@ import vn.iotstar.models.UserModel;
 import vn.iotstar.services.IUserService;
 
 public class UserServiceImpl implements IUserService {
-
+	//Lấy toàn bộ hàm trong tầng Dao của User
 	IUserDao userDao = new UserDaoImpl();
 
 	@Override

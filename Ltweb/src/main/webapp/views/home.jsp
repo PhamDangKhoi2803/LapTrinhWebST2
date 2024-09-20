@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${msg==false}">Đăng nhập sai</c:if>
-	<c:if test="${msg==true}">Hello ${uName} </c:if>
+	Trang chủ của user
 </body>
 </html>
