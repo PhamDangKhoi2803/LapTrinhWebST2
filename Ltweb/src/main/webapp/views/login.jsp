@@ -166,9 +166,9 @@ to {
 				name="remember"> Remember me
 			</label>
 		</div>
-
 		<div class="container" style="background-color: #f1f1f1">
 			<button type="button" class="cancelbtn">Cancel</button>
+			<a href="/Ltweb/register">Register</a>
 			<span class="psw">Forgot <a href="#">password?</a></span>
 		</div>
 	</form>

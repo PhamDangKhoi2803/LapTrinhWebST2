@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-//import vn.iotstar.configs.ConDB;
 import vn.iotstar.configs.DBConnectionSQLServer;
 import vn.iotstar.dao.IUserDao;
 import vn.iotstar.models.UserModel;
@@ -128,5 +127,69 @@ public class UserDaoImpl implements IUserDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void update(UserModel user) {
+		String sql = "UPDATE [users] set email = ?, fullname = ?, password = ?, image = ?, roleid = ?, phone = ?, createdate = ? where username = ?";
+		try {
+			Connection conn = new DBConnectionSQLServer().getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getEmail());
+			ps.setString(8, user.getUsername());
+			ps.setString(2, user.getFullname());
+			ps.setString(3, user.getPassword());
+			ps.setString(4, user.getImages());
+			ps.setInt(5, user.getRoleid());
+			ps.setString(6, user.getPhone());
+			ps.setDate(7, (Date) user.getCreateDate());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public boolean checkExistEmail(String email) {
+		boolean duplicate = false;
+		String query = "select * from [users] where email = ?";
+		try {
+			Connection conn = new DBConnectionSQLServer().getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				duplicate = true;
+			}
+			ps.close();
+			conn.close();
+		} catch (Exception ex) {
+		}
+		return duplicate;
+	}
+
+	@Override
+	public boolean checkExistUsername(String username) {
+		boolean duplicate = false;
+		String query = "select * from [users] where username = ?";
+		try {
+			Connection conn = new DBConnectionSQLServer().getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				duplicate = true;
+			}
+			ps.close();
+			conn.close();
+		} catch (Exception ex) {
+		}
+		return duplicate;
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
