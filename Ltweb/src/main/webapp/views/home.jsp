@@ -11,5 +11,8 @@
 </head>
 <body>
 	Trang chủ của user
+	<form action="/Ltweb/logout" method="get">
+		<a href="/Ltweb/logout">Logout</a>
+	</form>
 </body>
 </html>
