@@ -32,6 +32,6 @@ public class LogoutController extends HttpServlet {
 			}
 		}
 		
-		resp.sendRedirect("/Ltweb/login");
+		resp.sendRedirect("/Ltweb/home");
 	}
 }
