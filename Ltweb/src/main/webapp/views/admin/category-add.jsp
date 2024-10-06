@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file = "/commons/taglib.jsp" %>
-<form action = "<c:url value = "/admin/category/insert"/>" method ="post">
+<form action = "<c:url value = "/admin/category/insert"/>" method ="post" enctype ="multipart/form-data" >
 	<label for="catagoryname">Category name:</label><br> 
 	<input type="text" id="catagoryname" name="categoryname"><br>
 	<label for="images">Images:</label><br> 
